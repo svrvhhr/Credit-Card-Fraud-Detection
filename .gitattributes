@@ -1,3 +1,4 @@
 Final/data/X_train.csv filter=lfs diff=lfs merge=lfs -text
 /data/X_train.csv filter=lfs diff=lfs merge=lfs -text
 data/X_test.csv filter=lfs diff=lfs merge=lfs -text
+data/balanced_data.csv filter=lfs diff=lfs merge=lfs -text
