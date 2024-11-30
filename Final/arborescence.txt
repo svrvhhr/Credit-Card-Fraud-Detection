@@ -3,50 +3,37 @@
 final/
 │
 ├── data/
-│   ├── raw/                  # Données brutes, non transformées
-│   │   ├── creditcard.csv    # Jeu de données original
-│   │   
-│   ├── processed/            # Données après prétraitement
-│       └── smote_data.csv    # Données équilibrées avec SMOTE
-|      └── data_tst.csv 
-│
+│   
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb  # Exploration initiale des données
 │   ├── 02_data_preprocessing.ipynb # Préparation et équilibrage des données
 │   ├── 03_model_training.ipynb    # Entraînement des modèles
-│   ├── 04_model_evaluation.ipynb  # Évaluation et visualisation des résultats     
+│   └──04_model_evaluation.ipynb  # Évaluation et visualisation des résultats     
 |
 ├── scripts/                  # Scripts Python réutilisables pour chaque étape
+|   ├── data_exploration.py
 │   ├── data_preprocessing.py   # Scripts pour le prétraitement des données
 │   ├── smote_balancing.py      # Script pour appliquer SMOTE
 │   ├── model_training.py       # Script pour entraîner les modèles
 │   ├── model_evaluation.py     # Script pour l'évaluation des modèles
+|   └── main.py 
 │
 ├── models/                   # Contient les modèles entraînés et leurs paramètres
 │   ├── logistic_model.pkl      # Modèle sauvegardé (Logistic Regression)
 │   ├── decision_tree_model.pkl # Modèle sauvegardé (Decision Tree)
-│   ├── random_forest_model.pkl # Modèle sauvegardé (Random Forest)
+│   └── random_forest_model.pkl # Modèle sauvegardé (Random Forest)
 │
 ├── results/
-│   ├── figures/                # Graphiques (matrices de confusion, courbes ROC, etc.)
-│   ├── logs/                   # Fichiers de logs des modèles et hyperparamètres
-│   └── reports/                # Rapports finaux des modèles
+│   ├── figures/                # Graphiques (courbes ROC, etc.)
+│   └── reports/                # Rapports finaux des modèles et comparaison
 │
 ├── requirements.txt            # Liste des bibliothèques Python nécessaires
 ├── README.md                   # Documentation générale du projet
-└── main.py 
+
 
 Explication de l'arborescence :
 1. data/
-
-    raw/ : Contient les données originales non modifiées, pour garantir qu’une version brute est toujours disponible.
-        creditcard.csv : Jeu de données original.
-    processed/ : Contient les données transformées après les étapes de prétraitement.
-        smote_data.csv : Données équilibrées après application de SMOTE.
-        data_tst.csv : Jeu de données de test, potentiellement séparé manuellement ou généré automatiquement.
-
 2. notebooks/
-
     Contient les notebooks qui documentent et présentent chaque étape du projet avec du code, des visualisations, et des analyses.
         01_data_exploration.ipynb : Analyse exploratoire des données (statistiques descriptives, visualisations).
         02_data_preprocessing.ipynb : Prétraitement des données (nettoyage, équilibrage).
@@ -54,12 +41,12 @@ Explication de l'arborescence :
         04_model_evaluation.ipynb : Analyse des performances des modèles (métriques et courbes).
 
 3. scripts/
-
-    Scripts Python qui permettent d’automatiser chaque tâche du pipeline, idéal pour industrialiser le projet.
-        data_preprocessing.py : Nettoyage et normalisation des données.
-        smote_balancing.py : Application de SMOTE pour équilibrer les classes.
-        model_training.py : Entraînement des modèles (avec enregistrement des modèles entraînés).
-        model_evaluation.py : Évaluation et comparaison des performances.
+    data_exploration.py: Script pour l'exploration des données (chargement, visualisation, analyse initiale).
+    data_preprocessing.py : Ce script contient les étapes de prétraitement des données (nettoyage, transformation, etc.).
+    smote_balancing.py : Contient le code pour appliquer l'algorithme SMOTE afin de traiter le déséquilibre des classes dans les données.
+    model_training.py : Script qui entraîne les modèles de machine learning.
+    model_evaluation.py: Ce script évalue les performances des modèles.
+    main.py : Le script principal du projet qui orchestre l'exécution des autres scripts dans l'ordre logique (par exemple, chargement des données, prétraitement, entraînement des modèles, et évaluation). Il sert à automatiser l'ensemble du pipeline.
 
 4. models/
 
@@ -93,7 +80,3 @@ Explication de l'arborescence :
         Les étapes principales.
         Comment exécuter le projet.
         Les résultats attendus.
-
-8. main.py
-
-    Script principal pour exécuter l’ensemble du pipeline (prétraitement, entraînement, évaluation). Il regroupe tous les scripts et automatise le processus.
