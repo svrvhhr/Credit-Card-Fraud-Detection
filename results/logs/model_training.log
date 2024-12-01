@@ -1,0 +1,5 @@
+2024-12-01 11:55:39,927 - INFO - Lancement de la recherche des meilleurs paramètres avec GridSearchCV...
+2024-12-01 12:25:39,316 - INFO - Meilleurs paramètres trouvés : {'max_depth': 10, 'min_samples_split': 5, 'n_estimators': 50}
+2024-12-01 12:25:39,318 - INFO - Meilleur score AUC trouvé : 0.9995
+2024-12-01 12:27:56,333 - INFO - Modèle réentrainé avec les meilleurs paramètres : {'max_depth': 10, 'min_samples_split': 5, 'n_estimators': 50}
+2024-12-01 12:27:56,360 - INFO - Modèle sauvegardé sous '../models/best_random_forest_model.pkl'
