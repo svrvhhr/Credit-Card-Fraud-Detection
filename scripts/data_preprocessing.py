@@ -27,7 +27,7 @@ def preprocess_data(input_file_path, output_file_path):
     print(f"Données prétraitées et sauvegardées dans : {output_file_path}")
 
 
-input_file = '../../../data/creditcard.csv'
+input_file = '../data/creditcard.csv'
 output_file = '../data/preprocessed_creditcard.csv'
 
 preprocess_data(input_file, output_file)

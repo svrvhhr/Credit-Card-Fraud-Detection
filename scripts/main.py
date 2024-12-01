@@ -17,7 +17,7 @@ def main():
 
     # Prétraitement des données
     print("\n--- Prétraitement des données ---")
-    input_file = '../../../data/creditcard.csv'
+    input_file = '../data/creditcard.csv'
     output_file = '../data/preprocessed_creditcard.csv'
 
     preprocess_data(input_file, output_file)
@@ -31,6 +31,9 @@ def main():
 
     # Entraînement des modèles
     print("\n--- Entraînement des modèles ---")
+
+    X_train, X_test, y_train, y_test = load_data()
+    train_and_evaluate_models(X_train, X_test, y_train, y_test)
     
     # Chargement des données
     X_test = pd.read_csv('../data/X_test.csv')

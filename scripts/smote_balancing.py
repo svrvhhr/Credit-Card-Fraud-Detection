@@ -41,5 +41,5 @@ def apply_smote(input_file_path,output_file_path):
 
 
 input_file = '../data/preprocessed_creditcard.csv'  # Fichier prétraité
-output_file = '../data/balanced_creditcard.csv'    # Fichier équilibré             # Test
+output_file = '../data/balanced_creditcard.csv'    # Fichier équilibré
 apply_smote(input_file,output_file)
